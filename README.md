@@ -11,3 +11,6 @@ Esta tarea fue desarrollada por los alumnos:
 
 Para esta tarea se utilizó la imagen de redis, bitname/redis:6.0.16
 
+video demostración funcionamiento:
+
+https://github.com/Ignacio-ibarra05/Tarea-1_SD
