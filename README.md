@@ -8,3 +8,6 @@ Esta tarea fue desarrollada por los alumnos:
 -Ignacio Ibarra
 
 -Benjamin Muñoz
+
+Para esta tarea se utilizó la imagen de redis, bitname/redis:6.0.16
+
