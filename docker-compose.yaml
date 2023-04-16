@@ -1,0 +1,53 @@
+version: '3.8'
+services:
+  caching1:
+    image: bitnami/redis:6.0.16
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_MAXMEMORY=500b
+      - REDIS_MAXMEMORY_POLICY=allkeys-lru
+    volumes:
+      - ./data/redis:/bitnami/redis/data
+    ports:
+      - "6379:6379"
+
+  caching2:
+    image: bitnami/redis:6.0.16
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_MAXMEMORY=500b
+      - REDIS_MAXMEMORY_POLICY=allkeys-lru
+    volumes:
+      - ./data/redis:/bitnami/redis/data
+    ports:
+      - "6380:6379"
+
+  caching3:
+    image: bitnami/redis:6.0.16
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_MAXMEMORY=500b
+      - REDIS_MAXMEMORY_POLICY=allkeys-lru
+    volumes:
+      - ./data/redis:/bitnami/redis/data
+    ports:
+      - "6381:6379"
+
+  backend:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - caching1
+      - caching2
+      - caching3
+    environment:
+      - REDIS_HOST1=caching1,caching2,caching3
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api/index.js:/app/index.js
