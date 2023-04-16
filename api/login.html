@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Busqueda</title>
+  </head>
+  <body>
+    ID:
+    <input type="text" id="username" /><br />
+    <input type="button" value="Submit" id="submit" />
+  </body>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    jQuery(document).ready(function ($) {
+      $("#submit").click(function () {
+        let username = $("#username").val();
+        $.post(
+          "/login",
+          { username: username },
+          function (data) {
+            if (data === "success") {
+              window.location.href = "/";
+            }
+          }
+        );
+      });
+    });
+  </script>
+</html>
