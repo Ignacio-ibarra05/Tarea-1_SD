@@ -13,4 +13,4 @@ Para esta tarea se utilizó la imagen de redis, bitname/redis:6.0.16
 
 video demostración funcionamiento:
 
-https://github.com/Ignacio-ibarra05/Tarea-1_SD
+https://drive.google.com/drive/folders/1RgjgsbxzTAGegSBl-1HH44N9Xz1G_jFN?usp=sharing
