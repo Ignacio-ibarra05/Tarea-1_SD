@@ -5,6 +5,6 @@ En este GitHub se pueden obtener los codigos que se usaron para el desarrollo de
 
 Esta tarea fue desarrollada por los alumnos:
 
-Ignacio Ibarra
+-Ignacio Ibarra
 
-Benjamin Muñoz
+-Benjamin Muñoz
